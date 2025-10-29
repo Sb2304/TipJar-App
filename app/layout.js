@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SessionWrapper from "@/components/SessionWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,30 +23,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="flex flex-col justify-between min-h-screen md:h-screen">
-  <Navbar />
-  <div className="flex-1">
-    <div className="h-full w-full bg-stone-900 relative">
-      {/* Background Layer (stays on z-0) */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(194, 65, 12, 0.18) 0%, rgba(194, 65, 12, 0.1) 25%, rgba(194, 65, 12, 0.04) 35%, transparent 50%)`,
-          backgroundSize: "100% 100%",
-        }}
-      />
-      
-      {/* Content Layer (elevated to z-10) */}
-      <div className="relative z-10 h-full">
-        {children}
-      </div>
-    </div>
-  </div>
-  <Footer />
-</div>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <SessionWrapper>
+          <div className="flex flex-col justify-between min-h-screen md:h-screen">
+            <Navbar/>
+              <div className="flex-1">
+                <div className="h-full w-full bg-stone-900 relative">
+                  <div className="absolute inset-0 z-0"
+                    style={{
+                      backgroundImage: `radial-gradient(circle at 50% 50%, rgba(194, 65, 12, 0.18) 0%, rgba(194, 65, 12, 0.1) 25%, rgba(194, 65, 12, 0.04) 35%, transparent 50%)`,
+                      backgroundSize: "100% 100%",
+                    }}
+                    />
+                  <div className="relative z-10 h-full text-white">
+                    {children}
+                  </div>
+                </div>
+              </div>
+            <Footer/>
+          </div>
+        </SessionWrapper>
       </body>
     </html>
   );

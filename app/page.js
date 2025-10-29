@@ -1,11 +1,14 @@
+"use client"
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Home() {
+  const { data: session } = useSession()
   return (
     <>
       <div className="flex flex-col justify-center items-center h-[44vh] text-white gap-5">
         <div className="font-bold text-5xl flex justify-center items-center gap-2">
-          TipJar
+          Welcome to TipJar{session?`, ${session.user.name}`:""}!
           <span>
             <img className="size-20 p-0" src="/money-jar-2.svg" alt="jar" />
           </span>
@@ -13,16 +16,16 @@ export default function Home() {
         <p>
           A simple way to tip your favourite creators, developers, and artists.
         </p>
-        <div>
+        <div className="flex justify-center items-center gap-3">
           <button
             type="button"
-            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Start Now!
           </button>
           <button
             type="button"
-            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Read More
           </button>
@@ -65,7 +68,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-center mb-10">
           Learn more about us
         </h2>
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ym1zJGAW3WE?si=cFZj33EMbRxLyijf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="rounded-md drop-shadow-amber-500 drop-shadow-sm focus:bg-transparent"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ym1zJGAW3WE?si=cFZj33EMbRxLyijf" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="rounded-md drop-shadow-amber-500 drop-shadow-sm focus:bg-transparent"></iframe>
       </div>
     </>
   );
