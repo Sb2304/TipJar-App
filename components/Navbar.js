@@ -6,12 +6,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 const Navbar = () => {
   const { data: session } = useSession()
   const [showdropdown, setShowdropdown] = useState(false)
-  // if(session) {
-  //   return <>
-  //     Signed in as {session.user.email} <br/>
-  //     <button onClick={() => signOut()}>Sign out</button>
-  //   </>
-  // }
   return (
     <nav className='bg-stone-800 text-white p-4 flex justify-between items-center'>
       <div >
