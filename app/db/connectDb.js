@@ -5,7 +5,7 @@ const connectDb = async () => {
     const conn = await mongoose.connect(`mongodb://localhost:27017/tipjar`, {
       useNewUrlParser: true,
     });
-    console.log(`MongoDB Connected: {conn.connection.host}`);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(error.message);
     process.exit(1);

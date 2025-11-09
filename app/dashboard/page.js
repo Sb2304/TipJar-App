@@ -5,19 +5,24 @@ import { useSession,signIn,signOut } from 'next-auth/react'
 import Dashboard from '@/components/Dashboard'
 
 const DashboardPage = () => {
-    const {data:session}=useSession();
+    const {data:session, status}=useSession();
     const router = useRouter();
     useEffect(()=>{
-        if(!session){
+        if(status === "unauthenticated"){
             router.push("/login");
         }
-    },[session,router]);
+    },[status,router]);
+
+    if(status === "loading"){
+        return <div className='flex justify-center items-center h-screen'>Loading...</div>
+    }
     
   return (
     <div>
-      <Dashboard/>
+      {session && <Dashboard/>}
     </div>
   )
 }
 
 export default DashboardPage
+
