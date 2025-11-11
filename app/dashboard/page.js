@@ -1,7 +1,7 @@
 "use client"
-import {React,useEffect} from 'react'
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { useSession,signIn,signOut } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import Dashboard from '@/components/Dashboard'
 
 const DashboardPage = () => {
@@ -25,4 +25,3 @@ const DashboardPage = () => {
 }
 
 export default DashboardPage
-

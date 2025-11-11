@@ -32,7 +32,6 @@ const Dashboard = () => {
     let a = await updateProfile(e,session.user.username)
     // Also update the session with the new username
     await update({username: form.username})
-    alert("Profile Updated!")
   }
 
   return (

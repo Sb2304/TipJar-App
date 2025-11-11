@@ -46,10 +46,9 @@ export const updateProfile = async (data, oldusername) => {
         if(u){
             return {message:"Username already exists"}
         }
-        await Payment.updateMany({to_user:oldusername},{to_user:ndata.username})
-        await User.updateOne({email:ndata.email},ndata)
-        
+        await User.updateOne({email:ndata.email},ndata);
+        await Payment.updateMany({to_user:oldusername},{to_user:ndata.username});
+    } else {
+        await User.updateOne({email:ndata.email},ndata);
     }
-
-    await User.updateOne({email:ndata.email},ndata)
 }

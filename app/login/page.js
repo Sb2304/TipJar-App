@@ -2,8 +2,7 @@
 import {React,useEffect} from "react";
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from "next/navigation";
-
-const login = () => {
+const LoginPage = () => {
   const { data: session } = useSession();
   const router = useRouter();
   useEffect(() => {
@@ -12,7 +11,6 @@ const login = () => {
     router.push("/dashboard");
   }
   }, [session,router]);
-  
   
   return (
     <div className="text-white py-14 container mx-auto flex flex-col gap-10">
@@ -69,6 +67,4 @@ const login = () => {
   );
 };
 
-export default login;
-
-
+export default LoginPage;
