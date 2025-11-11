@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SessionWrapper from "@/components/SessionWrapper";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +26,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ToastContainer />
         <SessionWrapper>
-          <div className="flex flex-col justify-between min-h-screen md:h-screen">
+          <div className="flex flex-col justify-between min-h-screen h-screen">
             <Navbar/>
-              <div className="flex-1">
+              <div className="flex-1 flex-grow">
                 <div className="h-full w-full bg-stone-900 relative">
                   <div className="absolute inset-0 z-0"
                     style={{

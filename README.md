@@ -1,37 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TipJar - A Creator Support Platform
+
+TipJar is a web application built with Next.js that allows fans to support their favorite creators, developers, and artists through direct tips. It provides a personal page for each creator where they can receive payments and messages from their supporters.
+
+## Features
+
+*   **User Authentication:** Secure login with GitHub using NextAuth.js.
+*   **Personalized Creator Pages:** Every user gets a unique, shareable page (e.g., `tipjar.com/your-username`).
+*   **Direct Tipping:** Supporters can send money directly to creators using Razorpay.
+*   **Supporter Leaderboards:** Display top and recent supporters on creator pages.
+*   **User Dashboard:** Creators can manage their profile information, including name, username, and payment details.
+*   **Responsive Design:** A clean and modern UI that works on both desktop and mobile devices, built with Tailwind CSS.
+
+## Tech Stack
+
+*   **Framework:** Next.js
+*   **Authentication:** NextAuth.js
+*   **Database:** MongoDB with Mongoose
+*   **Payments:** Razorpay
+*   **Styling:** Tailwind CSS
+
+> **Note on the Payment System:** This project simulates a direct payment flow for demonstration purposes. In this simulation, creators provide their own Razorpay keys directly. In a real-world, production application, the platform would handle all payments centrally and manage payouts to creators separately to ensure security and proper financial management. This approach was chosen to keep the project's scope focused on core features rather than building a complex, multi-sided payment platform.
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   Node.js (v18 or later)
+*   MongoDB installed and running.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  **Clone the repository:**
+   
 
-## Learn More
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3.  **Set up environment variables:**
+    Create a file named `.env` in the root of the project and add the necessary variables (e.g., `DATABASE_URL`, `GITHUB_ID`, `GITHUB_SECRET`, `NEXTAUTH_SECRET`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open http://localhost:3000 with your browser to see the result.
 

@@ -1,5 +1,5 @@
 "use client"
-import {React,useEffect} from "react";
+import {useEffect} from "react";
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from "next/navigation";
 const LoginPage = () => {
@@ -13,7 +13,7 @@ const LoginPage = () => {
   }, [session,router]);
   
   return (
-    <div className="text-white py-14 container mx-auto flex flex-col gap-10">
+    <div className="text-white py-14 container mx-auto flex flex-col gap-10 md:px-0 px-5">
       <h1 className="text-3xl text-center font-bold">
         Login to get your fans to support you!
       </h1>
