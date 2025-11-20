@@ -70,11 +70,11 @@ const PaymentPage = ({ username }) => {
 
             <div className="cover w-full relative mx-auto pb-5">
                 <div className="banner h-1/4 md:h-1/5">
-                    <img className='md:object-cover w-full h-fit max-h-[500] md:max-h-[400]' src={currentuser.coverpic?currentuser.coverpic:  "https://c10.patreonusercontent.com/4/patreon-media/p/campaign/4842667/452146dcfeb04f38853368f554aadde1/eyJ3IjoxMjAwLCJ3ZSI6MX0%3D/18.gif?token-hash=C4WLw6ofDWu9MPjao0uNR8XjWLxPIWgYPRXnILMAdGE%3D&token-time=1764806400"} alt='creator cover' />
+                    <img className='md:object-cover w-full h-fit max-h-[500] md:max-h-[400]' src={currentuser.coverpic?currentuser.coverpic:  "./samplebanner.jpeg"} alt='creator cover' />
                 </div>
 
                 <div className="profile flex flex-col justify-center items-center relative gap-5 -translate-y-1/4">
-                    <img className='rounded-lg border border-gray-300/25 md:size-32 size-24' src={currentuser.profilepic?currentuser.profilepic:"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fassets.labroots.com%2F_public%2F_files%2Fsystem%2Fcontent-articles%2Fimages%2Fprofile%2F1685_4096x4096.jpg&f=1&nofb=1&ipt=b243cb45e53b53e9b0eb2afff76e4a26d6ce73dc20d67299f19a1b41f24b14fa"} alt="creator avatar" />
+                    <img className='rounded-lg border border-gray-300/25 md:size-32 size-24 bg-amber-600' src={currentuser.profilepic?currentuser.profilepic:"./user.svg"} alt="creator avatar" />
                     <div></div>
                     <div className='info flex flex-col justify-center items-center text-center'>
                         <div className="font-bold text-3xl">

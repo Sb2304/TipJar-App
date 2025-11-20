@@ -14,13 +14,6 @@ const Navbar = () => {
           TipJar <span><img className='size-12 md:block hidden' src="/money-jar-2.svg" alt="" /></span>
         </Link>
       </div>
-      {/* <ul className='flex justify-between gap-3'>
-        <li>Home</li>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Sign Up</li>
-        <li>Login</li>
-      </ul> */}
 
       <div className='flex justify-center items-center gap-3' >
         {session && <div className='relative'>

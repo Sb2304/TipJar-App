@@ -7,7 +7,6 @@ import { fetchUser,updateProfile } from '@/app/actions/useractions';
 
 
 
-// The main Dashboard component
 const Dashboard = () => {
   const {data:session, update}=useSession();
   const router = useRouter();
@@ -31,7 +30,6 @@ const Dashboard = () => {
   }
   const handleSubmit = async (e)=>{
     let a = await updateProfile(e,session.user.username)
-    // Also update the session with the new username
     await update({username: form.username})
     toast.success('Profile Updated Successfully!', {
       position: "top-right",
@@ -46,7 +44,6 @@ const Dashboard = () => {
   }
 
   return (
-    // Main container with dark background
     <div className="container mx-auto py-5 px-5 md:px-0">
         <h1 className='text-center my-5 text-3xl font-bold'>Welcome to your Dashboard</h1>
         <form className="max-w-2xl mx-auto" action={handleSubmit}>
